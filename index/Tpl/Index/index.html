@@ -81,11 +81,22 @@
             img.src=src;
         }
 
+
     }
 
     var imgonload=function(errors){
         /*errors：加载出错的图片数量；*/
         console.log("loaded,"+errors+" images loaded error!");
+        var conobj = $('#contennt');
+        $('#content').append('asdasdsadasdasd');
+        for(var i=7;i<=66;i++){
+            var str = '';
+            str += '<li class="listsss" name="' + i + '">';
+            str += '<h4><a><img onclick="clickfun(this);" name2="' + i + '" src="http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '.jpg"/></a></h4>';
+            str += '<div name3="' + i + '" class="list-item none"><img src="http://jiacarclub.com/aoxiang_coffee/Index/images/c' + i + '.jpg"/></div>';
+            str += '</li>';
+            conobj.append(str);
+        }
     }
 
     var funloading=function(n,total,src,obj){
@@ -120,7 +131,7 @@
     console.log("loading...");
 
     var img_arr = [];
-    for(var i=7;i<=66;i++){
+    for(var i=8;i<=66;i++){
         img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '.jpg');
         img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '_01.jpg');
         img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/c' + i + '.jpg');
@@ -141,6 +152,7 @@
                 <li>
                     <h4><a><img src="./end.jpg"></a></h4>
                 </li>
+                <div id="contennt">
                 <for start="1" end="8">
                     <li class="listsss" name="<-{$i}->">
                         <h4><a><img onclick="clickfun(this);" name2="<-{$i}->" src="http://jiacarclub.com/aoxiang_coffee/Index/images/<-{$i}->.jpg"/></a></h4>
@@ -149,8 +161,8 @@
                             <img src="http://jiacarclub.com/aoxiang_coffee/Index/images/c<-{$i}->.jpg"/>
                         </div>
                     </li>
-
                 </for>
+                </div>
                 <li>
                     <h4><a><img src="./start.jpg"></a></h4>
                 </li>
