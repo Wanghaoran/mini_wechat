@@ -210,12 +210,12 @@
                 shine.animate({width:'150%'},400);
                 setTimeout(function(){
                     $(obj).attr('src',url1).fadeIn();
-                    con.slideDown('fast');
+                    con.slideDown('normal');
                     con.addClass('opened');
                     shine[0].style.cssText='';
                 },500);
             }else{
-                con.slideUp('fast');
+                con.slideUp('normal');
                 $(obj).attr('src',url2).fadeIn();
                 con.removeClass('opened');
             }
