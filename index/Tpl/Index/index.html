@@ -134,10 +134,13 @@
 <div class="content">
 	<div class="wrapper">
 		<div class="main">
-			<h1 class="title">
-                <img src="http://jiacarclub.com/aoxiang_coffee/Index/images/top_mini.png" width="37" border="0"/>
-            </h1>
+			<!--<h1 class="title">-->
+                <!--<img src="http://jiacarclub.com/aoxiang_coffee/Index/images/top_mini.png" width="37" border="0"/>-->
+            <!--</h1>-->
 			<ul id="J_navlist" class="year">
+                <li>
+                    <h4><a><img src="./end.jpg"></a></h4>
+                </li>
                 <for start="1" end="67">
                     <li class="listsss" name="<-{$i}->">
                         <h4><a><img onclick="clickfun(this);" name2="<-{$i}->" src="http://jiacarclub.com/aoxiang_coffee/Index/images/<-{$i}->.jpg"/></a></h4>
@@ -146,8 +149,13 @@
                             <img src="http://jiacarclub.com/aoxiang_coffee/Index/images/c<-{$i}->.jpg"/>
                         </div>
                     </li>
+
                 </for>
-		</ul>
+                <li>
+                    <h4><a><img src="./start.jpg"></a></h4>
+                </li>
+
+            </ul>
             <!--
             <input type="hidden" name="qwe" id="qwe" value="5">
             <div align="center" class="loading" id="loading"><img src="__PUBLIC__/Index/images/loading.gif"></div>
@@ -176,35 +184,36 @@
     }
 </script-->
 <script type="text/javascript">
-(function($,ns){
-    ns.clickfun = function(obj){
-        var wrapper = $(obj).parents('li'),con = wrapper.find('.list-item'),shine = wrapper.find('.shine'),h = wrapper.find('h4');
-        var url1 = h.next().attr('src'),url2 = url1.replace('_01','');
-        h.css('position','relative');
-        if(!shine.length){
-            h.append('<div class="shine"></div>');
-            shine = wrapper.find('.shine');
-        }
+    (function($,ns){
+        ns.clickfun = function(obj){
+            var wrapper = $(obj).parents('li'),con = wrapper.find('.list-item'),shine = wrapper.find('.shine'),h = wrapper.find('h4');
+            var url1 = h.next().attr('src'),url2 = url1.replace('_01','');
+            h.css('position','relative');
+            if(!shine.length){
+                h.append('<div class="shine"></div>');
+                shine = wrapper.find('.shine');
+            }
 
-        if(!con.hasClass('opened')){
-            shine.animate({width:'100%'},800);
-            setTimeout(function(){
-                $(obj).fadeOut('fast',function(){
-                    $(this).attr('src',url1).fadeIn();
-                    con.slideDown();
-                    con.addClass('opened');
-                    shine[0].style.cssText='';
+            if(!con.hasClass('opened')){
+                shine.animate({width:'150%'},400);
+                setTimeout(function(){
+                    $(obj).fadeOut('fast',function(){
+                        $(this).attr('src',url1).fadeIn();
+                        con.slideDown(50);
+                        con.addClass('opened');
+                        shine[0].style.cssText='';
+                    })
+                },500)
+            }else{
+                $(obj).fadeOut(function(){
+                    con.slideUp('fast');
+                    $(this).attr('src',url2).fadeIn();
+                    con.removeClass('opened');
                 })
-            },1000)
-        }else{
-            $(obj).fadeOut(function(){
-                con.slideUp('fast');
-                $(this).attr('src',url2).fadeIn();
-                con.removeClass('opened');
-            })
+            }
         }
-    }
-})(jQuery,window);
+    })(jQuery,window);
 </script>
+
 </body>
 </html>
