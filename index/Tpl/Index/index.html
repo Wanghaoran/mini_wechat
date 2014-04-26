@@ -89,7 +89,7 @@
         console.log("loaded,"+errors+" images loaded error!");
         var conobj = $('#contennt');
         $('#content').append('asdasdsadasdasd');
-        for(var i=8;i<=66;i++){
+        for(var i=16;i<=66;i++){
             var str = '';
             str += '<li class="listsss" name="' + i + '">';
             str += '<h4><a><img onclick="clickfun(this);" name2="' + i + '" src="http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '.jpg"/></a></h4>';
@@ -131,7 +131,7 @@
     console.log("loading...");
 
     var img_arr = [];
-    for(var i=8;i<=66;i++){
+    for(var i=16;i<=66;i++){
         img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '.jpg');
         img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '_01.jpg');
         img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/c' + i + '.jpg');
@@ -153,7 +153,7 @@
                     <h4><a><img src="./end.jpg"></a></h4>
                 </li>
                 <div id="contennt">
-                <for start="1" end="8">
+                <for start="1" end="16">
                     <li class="listsss" name="<-{$i}->">
                         <h4><a><img onclick="clickfun(this);" name2="<-{$i}->" src="http://jiacarclub.com/aoxiang_coffee/Index/images/<-{$i}->.jpg"/></a></h4>
                         <img style="display: none;" src="http://jiacarclub.com/aoxiang_coffee/Index/images/<-{$i}->_01.jpg"/>
