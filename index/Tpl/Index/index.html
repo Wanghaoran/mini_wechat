@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/Index/css/common.css">
 <style type="text/css">
-    .shine{background:url('./liuxing.png') no-repeat center right;width:0;height:27px;overflow:hidden;position:absolute;bottom:-14px;left:0;z-index:2000}
+    .shine{background:url('./liuxing.png') no-repeat center right;width:0;height:26px;overflow:hidden;position:absolute;bottom:-13px;left:0;z-index:2000}
 </style>
 <script type="text/javascript" src="__PUBLIC__/Index/js/jquery.js"></script>
 <script type="text/javascript" src="__PUBLIC__/Index/js/scrollpagination.js"></script>
@@ -53,7 +53,7 @@
     });
 </script>
 
-
+-->
 <script>
     function loadimg(arr,funLoading,funOnLoad,funOnError){
         var numLoaded=0,
@@ -114,20 +114,20 @@
     }
 
     var funOnError=function(n,total,src,obj){
-        console.log("the "+n+"st img loaded Error!");
+        console.log("the "+src+"st img loaded Error!");
     }
 
     console.log("loading...");
 
     var img_arr = [];
-    for(var i=6;i<=63;i++){
+    for(var i=9;i<=66;i++){
         img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '.jpg');
         img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '_01.jpg');
         img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/c' + i + '.jpg');
     }
-//        loadimg(img_arr,funloading_obj,imgonload,funOnError);
+        loadimg(img_arr,funloading_obj,imgonload,funOnError);
 </script>
--->
+
 </head>
 <body>
 <img src="./liuxing.png" style="display: none;">
@@ -197,19 +197,15 @@
             if(!con.hasClass('opened')){
                 shine.animate({width:'150%'},400);
                 setTimeout(function(){
-                    $(obj).fadeOut('fast',function(){
-                        $(this).attr('src',url1).fadeIn();
-                        con.slideDown(50);
-                        con.addClass('opened');
-                        shine[0].style.cssText='';
-                    })
-                },500)
+                    $(obj).attr('src',url1).fadeIn();
+                    con.slideDown('fast');
+                    con.addClass('opened');
+                    shine[0].style.cssText='';
+                },500);
             }else{
-                $(obj).fadeOut(function(){
-                    con.slideUp('fast');
-                    $(this).attr('src',url2).fadeIn();
-                    con.removeClass('opened');
-                })
+                con.slideUp('fast');
+                $(obj).attr('src',url2).fadeIn();
+                con.removeClass('opened');
             }
         }
     })(jQuery,window);
