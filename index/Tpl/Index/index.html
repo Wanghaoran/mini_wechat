@@ -103,12 +103,12 @@
     }
 
     var funloading_obj=function(n,total,src,obj){
-        console.log(n+"of"+total+" pic loaded.",src);
+        console.log(n+"of"+total+" " + obj +" pic loaded.",src);
 //            $(obj).attr("src",src);
 //            $(obj).fadeIn(200);
         var newimg = document.createElement("img");
         newimg.src=src;
-        $(newimg).css('display','none');
+//        $(newimg).css('display','none');
 //            newimg.hide();
         $("body").append(newimg).fadeIn();
     }
@@ -120,7 +120,7 @@
     console.log("loading...");
 
     var img_arr = [];
-    for(var i=9;i<=66;i++){
+    for(var i=7;i<=66;i++){
         img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '.jpg');
         img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '_01.jpg');
         img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/c' + i + '.jpg');
@@ -141,7 +141,7 @@
                 <li>
                     <h4><a><img src="./end.jpg"></a></h4>
                 </li>
-                <for start="1" end="10">
+                <for start="1" end="8">
                     <li class="listsss" name="<-{$i}->">
                         <h4><a><img onclick="clickfun(this);" name2="<-{$i}->" src="http://jiacarclub.com/aoxiang_coffee/Index/images/<-{$i}->.jpg"/></a></h4>
                         <img style="display: none;" src="http://jiacarclub.com/aoxiang_coffee/Index/images/<-{$i}->_01.jpg"/>
