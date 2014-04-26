@@ -108,7 +108,7 @@
 //            $(obj).fadeIn(200);
         var newimg = document.createElement("img");
         newimg.src=src;
-//        $(newimg).css('display','none');
+        $(newimg).css('display','none');
 //            newimg.hide();
         $("body").append(newimg).fadeIn();
     }
@@ -125,7 +125,7 @@
         img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '_01.jpg');
         img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/c' + i + '.jpg');
     }
-//        loadimg(img_arr,funloading_obj,imgonload,funOnError);
+        loadimg(img_arr,funloading_obj,imgonload,funOnError);
 </script>
 
 </head>
