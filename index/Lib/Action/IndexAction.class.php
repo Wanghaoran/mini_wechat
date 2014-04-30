@@ -15,7 +15,8 @@ class IndexAction extends Action {
             if($id >= 64){
                 continue;
             }
-            $str .= '<li class="listsss" name="' . $id . '">
+            $str .= '<li class="listsss">
+            <a name="a' . $id . '"></a>
 <h4><a><img onclick="clickfun(this);"  src="http://jiacarclub.com/aoxiang_coffee/Index/images/' . $id . '.jpg"/></a></h4>
                         <img style="display: none;" src="http://jiacarclub.com/aoxiang_coffee/Index/images/' . $id . '_01.jpg"/>
                         <div class="list-item none">
