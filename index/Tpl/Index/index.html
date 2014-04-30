@@ -107,14 +107,14 @@
          obj：当loadimg函数中传入的arr为存放图片路径的数组时，obj=src，是图片路径，
          当arr为jquery对象时，obj是当前加载完成的img dom对象。
          */
-        console.log(n+"of"+total+" pic loaded.",src);
+//        console.log(n+"of"+total+" pic loaded.",src);
         var newimg = document.createElement("img");
         newimg.src=src;
         $("body").append(newimg).fadeIn();
     }
 
     var funloading_obj=function(n,total,src,obj){
-        console.log(n+"of"+total+" " + obj +" pic loaded.",src);
+//        console.log(n+"of"+total+" " + obj +" pic loaded.",src);
 //            $(obj).attr("src",src);
 //            $(obj).fadeIn(200);
         var newimg = document.createElement("img");
@@ -128,7 +128,7 @@
         console.log("the "+src+"st img loaded Error!");
     }
 
-    console.log("loading...");
+//    console.log("loading...");
 
     var img_arr = [];
     for(var i=16;i<=66;i++){
@@ -198,6 +198,8 @@
 <script type="text/javascript">
     (function($,ns){
         ns.clickfun = function(obj){
+
+
             var wrapper = $(obj).parents('li'),con = wrapper.find('.list-item'),shine = wrapper.find('.shine'),h = wrapper.find('h4');
             var url1 = h.next().attr('src'),url2 = url1.replace('_01','');
             h.css('position','relative');
@@ -219,6 +221,12 @@
                 $(obj).attr('src',url2).fadeIn();
                 con.removeClass('opened');
             }
+
+            var margin_top_str = $("#contennt").css("margin-top");
+            var end_str = parseFloat(margin_top_str) + parseFloat(margin_top_str) * 0.5;
+
+            $('html').animate({scrollTop: $(obj).offset().top - end_str}, 500);
+//            return false;// 返回false可以避免在原链接后加上#
         }
     })(jQuery,window);
 </script>
