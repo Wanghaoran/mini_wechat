@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MINI前世今生</title>
+<meta http-equiv="Cache-Control" content="max-age=3600">
+<meta name="MobileOptimized" content="240">
+<meta name="apple-touch-fullscreen" content="YES">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Index/css/common.css">
+<style type="text/css">
+    .shine{background:url('__ROOT__/liuxing.png') no-repeat center right;width:0;height:26px;overflow:hidden;position:absolute;bottom:-13px;left:0;z-index:2000}
+</style>
+<script type="text/javascript" src="__PUBLIC__/Index/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Index/js/scrollpagination.js"></script>
+    <!--
+
+<script type="text/javascript">
+
+
+    $(function(){
+        $('#J_navlist').scrollPagination({
+            'contentPage': '__URL__/ajaxget', // the url you are fetching the results
+//                'contentData': "&pages=" + $('#qwe').val(), // these are the variables you can pass to the request, for example: children().size() to know which page you are
+            'scrollTarget': $(window), // who gonna scroll? in this example, the full window
+            'heightOffset': 200, // it gonna request when scroll is 10 pixels before the page ends
+            'beforeLoad': function(){ // before load function, you can display a preloader div
+                $('#loading').fadeIn();
+            },
+            'afterLoad': function(elementsLoaded){ // after loading content, you can use this function to animate your new elements
+                $('#loading').fadeOut();
+                var i = 0;
+                $(elementsLoaded).fadeInWithDelay();
+                if ($('#J_navlist').children().size() > 100){ // if more than 100 results already loaded, then stop pagination (only for testing)
+                    $('#nomoreresults').fadeIn();
+                    $('#J_navlist').stopScrollPagination();
+                }
+//                    $('#qwe').val(elementsLoaded.attr('name'));
+            }
+        });
+
+        // code for fade in element by element
+        $.fn.fadeInWithDelay = function(){
+            var delay = 0;
+            return this.each(function(){
+                $(this).delay(delay).animate({opacity:1}, 200);
+                delay += 100;
+            });
+        };
+
+    });
+</script>
+
+-->
+    <!--
+<script>
+    function loadimg(arr,funLoading,funOnLoad,funOnError){
+        var numLoaded=0,
+                numError=0,
+                isObject=Object.prototype.toString.call(arr)==="[object Object]" ? true : false;
+
+        var arr=isObject ? arr.get() : arr;
+        for(a in arr){
+            var src=isObject ? $(arr[a]).attr("data-src") : arr[a];
+            preload(src,arr[a]);
+        }
+
+        function preload(src,obj){
+            var img=new Image();
+            img.onload=function(){
+                numLoaded++;
+                funLoading && funLoading(numLoaded,arr.length,src,obj);
+                funOnLoad && numLoaded==arr.length && funOnLoad(numError);
+            };
+            img.onerror=function(){
+                numLoaded++;
+                numError++;
+                funOnError && funOnError(numLoaded,arr.length,src,obj);
+            }
+            img.src=src;
+        }
+
+
+    }
+
+    var imgonload=function(errors){
+        /*errors：加载出错的图片数量；*/
+        console.log("loaded,"+errors+" images loaded error!");
+        var conobj = $('#contennt');
+        $('#content').append('asdasdsadasdasd');
+        for(var i=16;i<=66;i++){
+            var str = '';
+            str += '<li class="listsss" name="' + i + '">';
+            str += '<a name="a' + i +'"  style="position:absolute;margin-top: -50%;"></a>';
+            str += '<h4><a><img onclick="clickfun(this);" name2="' + i + '" src="http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '.jpg"/></a></h4><img style="display: none;" src="http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '_01.jpg"/>';
+            str += '<div name3="' + i + '" class="list-item none"><img src="http://jiacarclub.com/aoxiang_coffee/Index/images/c' + i + '.jpg"/></div>';
+            str += '</li>';
+            conobj.append(str);
+        }
+    }
+
+    var funloading=function(n,total,src,obj){
+        /*
+         n：已加载完成的数量；
+         total：总共需加载的图片数量；
+         src：当前加载完成的图片路径；
+         obj：当loadimg函数中传入的arr为存放图片路径的数组时，obj=src，是图片路径，
+         当arr为jquery对象时，obj是当前加载完成的img dom对象。
+         */
+//        console.log(n+"of"+total+" pic loaded.",src);
+        var newimg = document.createElement("img");
+        newimg.src=src;
+        $("body").append(newimg).fadeIn();
+    }
+
+    var funloading_obj=function(n,total,src,obj){
+//        console.log(n+"of"+total+" " + obj +" pic loaded.",src);
+//            $(obj).attr("src",src);
+//            $(obj).fadeIn(200);
+        var newimg = document.createElement("img");
+        newimg.src=src;
+        $(newimg).css('display','none');
+//            newimg.hide();
+        $("body").append(newimg).fadeIn();
+    }
+
+    var funOnError=function(n,total,src,obj){
+        console.log("the "+src+"st img loaded Error!");
+    }
+
+//    console.log("loading...");
+
+    var img_arr = [];
+    for(var i=16;i<=66;i++){
+        img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '.jpg');
+        img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '_01.jpg');
+        img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/c' + i + '.jpg');
+    }
+        loadimg(img_arr,funloading_obj,imgonload,funOnError);
+</script>
+-->
+</head>
+<body>
+<img src="__ROOT__/liuxing.png" style="display: none;">
+<div class="content">
+	<div class="wrapper">
+		<div class="main">
+			<!--<h1 class="title">-->
+                <!--<img src="http://jiacarclub.com/aoxiang_coffee/Index/images/top_mini.png" width="37" border="0"/>-->
+            <!--</h1>-->
+			<ul id="J_navlist" class="year">
+                <li>
+                    <h4><a><img src="__ROOT__/end.jpg" style="left: 0;top: 0;z-index:999;position:fixed;"></a></h4>
+                </li>
+                <div id="contennt" style="margin-top: 38.7%;">
+
+                <for start="1" end="20">
+                    <li class="listsss">
+                        <a name="a<-{$i}->" style="position:absolute;margin-top: -50%;"></a>
+                        <h4><a><img onclick="clickfun(this);" name2="<-{$i}->" src="__PUBLIC__/car/<-{$i}->.jpg"/></a></h4>
+                        <img style="display: none;" src="__PUBLIC__/car/<-{$i}->-01.jpg"/>
+                        <div name3="<-{$i}->" class="list-item none">
+                            <img src="__PUBLIC__/car/c<-{$i}->.jpg"/>
+                        </div>
+                    </li>
+                </for>
+                </div>
+                <li>
+                    <h4><a><img src="__ROOT__/start.jpg"></a></h4>
+                </li>
+
+            </ul>
+            <!--
+            <input type="hidden" name="qwe" id="qwe" value="5">
+            <div align="center" class="loading" id="loading"><img src="__PUBLIC__/Index/images/loading.gif"></div>
+            -->
+        </div>
+	</div>
+</div>
+<!--script type="text/javascript">
+
+    var clickfun = function(obj){
+        var src=$(obj).attr('src');
+        src=src.substr(0,src.lastIndexOf("."));//把".jpg"去掉
+        var pos=src.lastIndexOf("_");//查看最后一个_后面的两位是不是01
+        if(src.substr(pos+1,2)==01){//如果是点击过的,则将后面的_01去掉
+            obj.src=src.substr(0,pos)+".jpg";
+        }else{
+            obj.src=src+"_01.jpg";//如果是刚点击,则将src加上_01
+        }
+
+        var par = $(obj).parent().parent().next().next();
+        if(par.is(":hidden")){
+            par.show();
+        }else{
+            par.hide();
+        }
+    }
+</script-->
+<script type="text/javascript">
+    (function($,ns){
+        ns.clickfun = function(obj){
+
+
+            var wrapper = $(obj).parents('li'),con = wrapper.find('.list-item'),shine = wrapper.find('.shine'),h = wrapper.find('h4');
+            var url1 = h.next().attr('src'),url2 = url1.replace('-01','');
+            h.css('position','relative');
+            if(!shine.length){
+                h.append('<div class="shine"></div>');
+                shine = wrapper.find('.shine');
+            }
+
+            if(!con.hasClass('opened')){
+                shine.animate({width:'150%'},400);
+                setTimeout(function(){
+                    $(obj).attr('src',url1).fadeIn();
+                    con.slideDown('normal');
+                    con.addClass('opened');
+                    shine[0].style.cssText='';
+                },500);
+            }else{
+                con.slideUp('normal');
+                $(obj).attr('src',url2).fadeIn();
+                con.removeClass('opened');
+            }
+
+            var mao = $(obj).attr('name2');
+
+            location.hash= 'a' + mao;
+//            var margin_top_str = $("#contennt").css("margin-top");
+//            var end_str = parseFloat(margin_top_str) + parseFloat(margin_top_str) * 0.5;
+//
+//            $('html').animate({scrollTop: $(obj).offset().top - end_str}, 500);
+//            return false;// 返回false可以避免在原链接后加上#
+        }
+    })(jQuery,window);
+</script>
+
+<div style="display: none;">
+    <script src="http://v1.cnzz.com/stat.php?id=5891453&web_id=5891453" language="JavaScript"></script>
+</div>
+
+</body>
+</html>

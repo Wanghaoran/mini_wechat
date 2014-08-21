@@ -1,9 +1,18 @@
 <?php
 // 本类由系统自动生成，仅供测试用途
 class IndexAction extends Action {
+
     public function index(){
-        $result = R('Car/getcar', array(), 'Widget');
-        $this -> assign('result', $result);
+        $this -> display();
+    }
+
+    public function guide(){
+        $this -> display();
+    }
+
+    public function show(){
+//        $result = R('Car/getcar', array(), 'Widget');
+//        $this -> assign('result', $result);
         $this -> display();
     }
 
