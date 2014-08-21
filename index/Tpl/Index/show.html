@@ -10,136 +10,17 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/Index/css/common.css">
-<style type="text/css">
+    <script type="text/javascript" src="__PUBLIC__/Index/js/jquery.js"></script>
+
+    <style type="text/css">
     .shine{background:url('__ROOT__/liuxing.png') no-repeat center right;width:0;height:26px;overflow:hidden;position:absolute;bottom:-13px;left:0;z-index:2000}
 </style>
-
-    <!--
-
-<script type="text/javascript">
-
-
-    $(function(){
-        $('#J_navlist').scrollPagination({
-            'contentPage': '__URL__/ajaxget', // the url you are fetching the results
-//                'contentData': "&pages=" + $('#qwe').val(), // these are the variables you can pass to the request, for example: children().size() to know which page you are
-            'scrollTarget': $(window), // who gonna scroll? in this example, the full window
-            'heightOffset': 200, // it gonna request when scroll is 10 pixels before the page ends
-            'beforeLoad': function(){ // before load function, you can display a preloader div
-                $('#loading').fadeIn();
-            },
-            'afterLoad': function(elementsLoaded){ // after loading content, you can use this function to animate your new elements
-                $('#loading').fadeOut();
-                var i = 0;
-                $(elementsLoaded).fadeInWithDelay();
-                if ($('#J_navlist').children().size() > 100){ // if more than 100 results already loaded, then stop pagination (only for testing)
-                    $('#nomoreresults').fadeIn();
-                    $('#J_navlist').stopScrollPagination();
-                }
-//                    $('#qwe').val(elementsLoaded.attr('name'));
-            }
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+            $('#roll_top').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});
+            $('#fall').click(function(){$('html,body').animate({scrollTop:$('.footer').offset().top}, 800);return false;});
         });
-
-        // code for fade in element by element
-        $.fn.fadeInWithDelay = function(){
-            var delay = 0;
-            return this.each(function(){
-                $(this).delay(delay).animate({opacity:1}, 200);
-                delay += 100;
-            });
-        };
-
-    });
-</script>
-
--->
-    <!--
-<script>
-    function loadimg(arr,funLoading,funOnLoad,funOnError){
-        var numLoaded=0,
-                numError=0,
-                isObject=Object.prototype.toString.call(arr)==="[object Object]" ? true : false;
-
-        var arr=isObject ? arr.get() : arr;
-        for(a in arr){
-            var src=isObject ? $(arr[a]).attr("data-src") : arr[a];
-            preload(src,arr[a]);
-        }
-
-        function preload(src,obj){
-            var img=new Image();
-            img.onload=function(){
-                numLoaded++;
-                funLoading && funLoading(numLoaded,arr.length,src,obj);
-                funOnLoad && numLoaded==arr.length && funOnLoad(numError);
-            };
-            img.onerror=function(){
-                numLoaded++;
-                numError++;
-                funOnError && funOnError(numLoaded,arr.length,src,obj);
-            }
-            img.src=src;
-        }
-
-
-    }
-
-    var imgonload=function(errors){
-        /*errors：加载出错的图片数量；*/
-        console.log("loaded,"+errors+" images loaded error!");
-        var conobj = $('#contennt');
-        $('#content').append('asdasdsadasdasd');
-        for(var i=16;i<=66;i++){
-            var str = '';
-            str += '<li class="listsss" name="' + i + '">';
-            str += '<a name="a' + i +'"  style="position:absolute;margin-top: -50%;"></a>';
-            str += '<h4><a><img onclick="clickfun(this);" name2="' + i + '" src="http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '.jpg"/></a></h4><img style="display: none;" src="http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '_01.jpg"/>';
-            str += '<div name3="' + i + '" class="list-item none"><img src="http://jiacarclub.com/aoxiang_coffee/Index/images/c' + i + '.jpg"/></div>';
-            str += '</li>';
-            conobj.append(str);
-        }
-    }
-
-    var funloading=function(n,total,src,obj){
-        /*
-         n：已加载完成的数量；
-         total：总共需加载的图片数量；
-         src：当前加载完成的图片路径；
-         obj：当loadimg函数中传入的arr为存放图片路径的数组时，obj=src，是图片路径，
-         当arr为jquery对象时，obj是当前加载完成的img dom对象。
-         */
-//        console.log(n+"of"+total+" pic loaded.",src);
-        var newimg = document.createElement("img");
-        newimg.src=src;
-        $("body").append(newimg).fadeIn();
-    }
-
-    var funloading_obj=function(n,total,src,obj){
-//        console.log(n+"of"+total+" " + obj +" pic loaded.",src);
-//            $(obj).attr("src",src);
-//            $(obj).fadeIn(200);
-        var newimg = document.createElement("img");
-        newimg.src=src;
-        $(newimg).css('display','none');
-//            newimg.hide();
-        $("body").append(newimg).fadeIn();
-    }
-
-    var funOnError=function(n,total,src,obj){
-        console.log("the "+src+"st img loaded Error!");
-    }
-
-//    console.log("loading...");
-
-    var img_arr = [];
-    for(var i=16;i<=66;i++){
-        img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '.jpg');
-        img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/' + i + '_01.jpg');
-        img_arr.push('http://jiacarclub.com/aoxiang_coffee/Index/images/c' + i + '.jpg');
-    }
-        loadimg(img_arr,funloading_obj,imgonload,funOnError);
-</script>
--->
+    </script>
 </head>
 <body>
 <img src="__ROOT__/liuxing.png" style="display: none;">
@@ -151,23 +32,25 @@
             <!--</h1>-->
 			<ul id="J_navlist" class="year">
                 <li>
-                    <h4><a><img src="__ROOT__/end.jpg" style="left: 0;top: 0;z-index:999;position:fixed;"></a></h4>
+                    <h4><a id="fall"><img src="__ROOT__/end.jpg" style="left: 0;top: 0;z-index:999;position:fixed;"></a></h4>
+                    <a class="down"><img src="__ROOT__/down.png"/></a>
                 </li>
                 <div id="contennt" style="margin-top: 38.7%;">
 
-                <for start="1" end="30">
+                <for start="1" end="65">
                     <li class="listsss">
                         <a name="a<-{$i}->" style="position:absolute;margin-top: -50%;"></a>
-                        <h4><a><img onclick="clickfun(this);" class="scrollLoading" name2="<-{$i}->" src="http://www.zhangxinxu.com/study/image/pixel.gif" data-url="http://jiacarclub.com/aoxiang_coffee/Index/car/<-{$i}->.jpg" style="background:url(http://www.zhangxinxu.com/study/image/loading.gif) no-repeat center;" /></a></h4>
-                        <img class="scrollLoading" style="display: none;" src="http://www.zhangxinxu.com/study/image/pixel.gif" data-url="http://jiacarclub.com/aoxiang_coffee/Index/car/<-{$i}->-01.jpg" style="background:url(http://www.zhangxinxu.com/study/image/loading.gif) no-repeat center;" />
+                        <h4><a><img onclick="clickfun(this);" class="scrollLoading" name2="<-{$i}->" src="__PUBLIC__/Index/images/pixel.gif" data-url="http://jiacarclub.com/aoxiang_coffee/Index/car/<-{$i}->.jpg" style="background:url(__PUBLIC__/Index/images/loading.gif) no-repeat center;" /></a></h4>
+                        <img class="scrollLoading" style="display: none;" src="__PUBLIC__/Index/images/pixel.gif" data-url="http://jiacarclub.com/aoxiang_coffee/Index/car/<-{$i}->-01.jpg" style="background:url(__PUBLIC__/Index/images/loading.gif) no-repeat center;" />
                         <div name3="<-{$i}->" class="list-item none">
-                            <img class="scrollLoading" src="http://www.zhangxinxu.com/study/image/pixel.gif" data-url="http://jiacarclub.com/aoxiang_coffee/Index/car/c<-{$i}->.jpg" style="background:url(http://www.zhangxinxu.com/study/image/loading.gif) no-repeat center;" />
+                            <img class="scrollLoading" src="__PUBLIC__/Index/images/pixel.gif" data-url="http://jiacarclub.com/aoxiang_coffee/Index/car/c<-{$i}->.jpg" style="background:url(__PUBLIC__/Index/images/loading.gif) no-repeat center;" />
                         </div>
                     </li>
                 </for>
                 </div>
+                <div class="footer"></div>
                 <li>
-                    <h4><a><img src="__ROOT__/start.jpg"></a></h4>
+                    <h4><a id="roll_top"><img src="__ROOT__/start.jpg"></a></h4>
                 </li>
 
             </ul>
@@ -198,7 +81,6 @@
         }
     }
 </script-->
-<script type="text/javascript" src="__PUBLIC__/Index/js/jquery.js"></script>
 <script type="text/javascript" src="__PUBLIC__/Index/js/jquery.scrollLoading.js"></script>
 <script>
     $(".scrollLoading").scrollLoading();
