@@ -114,8 +114,11 @@
             }
 
             var mao = $(obj).attr('name2');
+            var topnum = mao*20;
+            console.log(topnum);
+            $('html,body').animate({scrollTop: topnum}, 400);
 
-            location.hash= 'a' + mao;
+//            location.hash= 'a' + mao;
 //            var margin_top_str = $("#contennt").css("margin-top");
 //            var end_str = parseFloat(margin_top_str) + parseFloat(margin_top_str) * 0.5;
 //
