@@ -32,8 +32,8 @@
             <!--</h1>-->
 			<ul id="J_navlist" class="year">
                 <li>
-                    <h4><a id="fall"><img src="__ROOT__/end.jpg" style="left: 0;top: 0;z-index:999;position:fixed;"></a></h4>
-                    <a class="down"><img src="__ROOT__/down.png"/></a>
+                    <h4><img src="__ROOT__/end.jpg" style="left: 0;top: 0;z-index:999;position:fixed;"><a  href="" id="fall"></a></h4>
+
                 </li>
                 <div id="contennt" style="margin-top: 38.7%;">
 
@@ -50,37 +50,16 @@
                 </div>
                 <div class="footer"></div>
                 <li>
-                    <h4><a id="roll_top"><img src="__ROOT__/start.jpg"></a></h4>
+                    <h4><a><img src="__ROOT__/start.jpg"></a><a id="roll_top"></a></h4>
                 </li>
 
             </ul>
-            <!--
-            <input type="hidden" name="qwe" id="qwe" value="5">
-            <div align="center" class="loading" id="loading"><img src="__PUBLIC__/Index/images/loading.gif"></div>
-            -->
         </div>
-	</div>
+        <a href="__URL__/end" class="down"><img src="__ROOT__/down.png"/></a>
+
+    </div>
 </div>
-<!--script type="text/javascript">
 
-    var clickfun = function(obj){
-        var src=$(obj).attr('src');
-        src=src.substr(0,src.lastIndexOf("."));//把".jpg"去掉
-        var pos=src.lastIndexOf("_");//查看最后一个_后面的两位是不是01
-        if(src.substr(pos+1,2)==01){//如果是点击过的,则将后面的_01去掉
-            obj.src=src.substr(0,pos)+".jpg";
-        }else{
-            obj.src=src+"_01.jpg";//如果是刚点击,则将src加上_01
-        }
-
-        var par = $(obj).parent().parent().next().next();
-        if(par.is(":hidden")){
-            par.show();
-        }else{
-            par.hide();
-        }
-    }
-</script-->
 <script type="text/javascript" src="__PUBLIC__/Index/js/jquery.scrollLoading.js"></script>
 <script>
     $(".scrollLoading").scrollLoading();
@@ -127,10 +106,10 @@
         }
     })(jQuery,window);
 </script>
-
+<!--
 <div style="display: none;">
     <script src="http://v1.cnzz.com/stat.php?id=5891453&web_id=5891453" language="JavaScript"></script>
 </div>
-
+-->
 </body>
 </html>

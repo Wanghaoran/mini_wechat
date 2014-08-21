@@ -10,6 +10,10 @@ class IndexAction extends Action {
         $this -> display();
     }
 
+    public function end(){
+        $this -> display();
+    }
+
     public function show(){
 //        $result = R('Car/getcar', array(), 'Widget');
 //        $this -> assign('result', $result);
