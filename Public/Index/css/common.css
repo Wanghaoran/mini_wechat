@@ -45,7 +45,7 @@ body{font-family:"mircrosoft yahei","微软雅黑",Tahoma, Verdana, Arial, Genev
 .content .main ul.year .footer{ height:0px;}
 
 .content .main ul.year li{ position:relative;}
-.content .main ul.year li a#roll_top{ position:absolute; right:0; top:5px; width:20%; height:100px; display:inline-block;}
-.content .main ul.year li a#fall{position:absolute; right:0; bottom:10px; width:20%; height:100px;; display:inline-block;}
-.content .wrapper a.down{ display:inline-block; width:12%; margin:0 auto; left:50%; margin-left:-6%; bottom:0; z-index:9999; position:absolute;}
+.content .main ul.year li a#roll_top{ position:absolute; right:0; top:5px; width:20%; height:100px; display:inline-block;cursor:pointer}
+.content .main ul.year li a#fall{position:absolute; right:0; top:-150px; width:20%; height:100px; display:inline-block; z-index:9999; cursor:pointer}
+.content .wrapper a.down{ display:inline-block; width:12%; margin:0 auto; left:50%; margin-left:-6%; bottom:0; z-index:9999; position:absolute; }
 .content .wrapper a.down img{ width:100%; border:none; vertical-align:bottom;}
