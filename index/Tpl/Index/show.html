@@ -13,8 +13,7 @@
 <style type="text/css">
     .shine{background:url('__ROOT__/liuxing.png') no-repeat center right;width:0;height:26px;overflow:hidden;position:absolute;bottom:-13px;left:0;z-index:2000}
 </style>
-<script type="text/javascript" src="__PUBLIC__/Index/js/jquery.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Index/js/scrollpagination.js"></script>
+
     <!--
 
 <script type="text/javascript">
@@ -156,13 +155,13 @@
                 </li>
                 <div id="contennt" style="margin-top: 38.7%;">
 
-                <for start="1" end="10">
+                <for start="1" end="30">
                     <li class="listsss">
                         <a name="a<-{$i}->" style="position:absolute;margin-top: -50%;"></a>
-                        <h4><a><img onclick="clickfun(this);" name2="<-{$i}->" src="http://jiacarclub.com/aoxiang_coffee/Index/car/<-{$i}->.jpg"/></a></h4>
-                        <img style="display: none;" src="http://jiacarclub.com/aoxiang_coffee/Index/car/<-{$i}->-01.jpg"/>
+                        <h4><a><img onclick="clickfun(this);" class="scrollLoading" name2="<-{$i}->" src="http://www.zhangxinxu.com/study/image/pixel.gif" data-url="http://jiacarclub.com/aoxiang_coffee/Index/car/<-{$i}->.jpg" style="background:url(http://www.zhangxinxu.com/study/image/loading.gif) no-repeat center;" /></a></h4>
+                        <img class="scrollLoading" style="display: none;" src="http://www.zhangxinxu.com/study/image/pixel.gif" data-url="http://jiacarclub.com/aoxiang_coffee/Index/car/<-{$i}->-01.jpg" style="background:url(http://www.zhangxinxu.com/study/image/loading.gif) no-repeat center;" />
                         <div name3="<-{$i}->" class="list-item none">
-                            <img src="http://jiacarclub.com/aoxiang_coffee/Index/car/c<-{$i}->.jpg"/>
+                            <img class="scrollLoading" src="http://www.zhangxinxu.com/study/image/pixel.gif" data-url="http://jiacarclub.com/aoxiang_coffee/Index/car/c<-{$i}->.jpg" style="background:url(http://www.zhangxinxu.com/study/image/loading.gif) no-repeat center;" />
                         </div>
                     </li>
                 </for>
@@ -199,6 +198,12 @@
         }
     }
 </script-->
+<script type="text/javascript" src="__PUBLIC__/Index/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Index/js/jquery.scrollLoading.js"></script>
+<script>
+    $(".scrollLoading").scrollLoading();
+
+</script>
 <script type="text/javascript">
     (function($,ns){
         ns.clickfun = function(obj){
