@@ -35,6 +35,6 @@ html, body {height: 100%;}
 
 .container{ min-width:320px; max-width:640px; width:100%; margin:0 auto;}
 	.home{ width:100%; position:relative;}
-		.home img{ width:100%;}
+		.home img{ width:100%; vertical-align:bottom}
 		.home a.down{ display:inline-block; width:12%; margin:0 auto; position:absolute; left:50%; margin-left:-6%; bottom:10px; position:fixed}
 		.home a.down img{ width:100%; border:none;}
