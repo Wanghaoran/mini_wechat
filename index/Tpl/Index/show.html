@@ -91,6 +91,17 @@
                 con.removeClass('opened');
             }
 
+            var en_height = $(window).height()/2;
+            var mao = $(obj).attr('name2');
+            var nums = mao * 90;
+            if(nums <= en_height){
+                var set_height = 0;
+            }else{
+                var set_height = nums + en_height - 180 - 220;
+            }
+
+            $('html,body').animate({scrollTop: set_height}, 400);
+
 //            var mao = $(obj).attr('name2');
 //            var topnum = mao*20;
 //            console.log(topnum);
