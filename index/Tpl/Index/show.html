@@ -36,9 +36,8 @@
                 </li>
                 <div id="contennt" style="margin-top: 38.7%;">
 
-                <for start="1" end="65">
+                <for start="1" end="66">
                     <li class="listsss">
-                        <a name="a<-{$i}->" style="position:absolute;margin-top: -50%;"></a>
                         <h4><a><img onclick="clickfun(this);" class="scrollLoading" name2="<-{$i}->" src="__PUBLIC__/Index/images/pixel.gif" data-url="http://jiacarclub.com/aoxiang_coffee/Index/car/<-{$i}->.jpg" style="background:url(__PUBLIC__/Index/images/loading.gif) no-repeat center;" /></a></h4>
                         <img class="scrollLoading" style="display: none;" src="__PUBLIC__/Index/images/pixel.gif" data-url="http://jiacarclub.com/aoxiang_coffee/Index/car/<-{$i}->-01.jpg" style="background:url(__PUBLIC__/Index/images/loading.gif) no-repeat center;" />
                         <div name3="<-{$i}->" class="list-item none">
@@ -91,14 +90,31 @@
                 con.removeClass('opened');
             }
 
-            var en_height = $(window).height()/2;
+            //窗口可视高度
+            var en_height = $(window).height() - 120;
             var mao = $(obj).attr('name2');
-            var nums = mao * 90;
+            //之前元素的高度
+            var nums = mao * 90 - 86;
+            //当前元素的高度
+            var now_height = 180 + 145;
+
+            var cha_height = (en_height - now_height) / 2;
+
+            if(cha_height >= 0){
+                var set_height = nums - cha_height;
+            }else{
+                var set_height = nums
+            }
+
+//            console.log(en_height);
+//            console.log(cha_height);
+            /*
             if(nums <= en_height){
                 var set_height = 0;
             }else{
                 var set_height = nums + en_height - 180 - 220;
             }
+            */
 
             $('html,body').animate({scrollTop: set_height}, 400);
 
