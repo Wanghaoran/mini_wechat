@@ -3,20 +3,52 @@
 class IndexAction extends Action {
 
     public function index(){
+        $arr = array(
+            '#MINI 55周年#机密档案曝光，前世今生被国内外专家联合调查',
+            '才知道1975年前的Mini没有两侧后视镜！那怎么倒的车？！',
+            'Mary Quant设计的迷你裙灵感来源于Mini，这事儿你知道么？',
+            'Happy Birthday to MINI！55年依旧传承的经典元素。',
+        );
+        $title = $arr[array_rand($arr)];
+        $this -> assign('title', $title);
         $this -> display();
     }
 
     public function guide(){
+        $arr = array(
+            '#MINI 55周年#机密档案曝光，前世今生被国内外专家联合调查',
+            '才知道1975年前的Mini没有两侧后视镜！那怎么倒的车？！',
+            'Mary Quant设计的迷你裙灵感来源于Mini，这事儿你知道么？',
+            'Happy Birthday to MINI！55年依旧传承的经典元素。',
+        );
+        $title = $arr[array_rand($arr)];
+        $this -> assign('title', $title);
         $this -> display();
     }
 
     public function end(){
+        $arr = array(
+            '#MINI 55周年#机密档案曝光，前世今生被国内外专家联合调查',
+            '才知道1975年前的Mini没有两侧后视镜！那怎么倒的车？！',
+            'Mary Quant设计的迷你裙灵感来源于Mini，这事儿你知道么？',
+            'Happy Birthday to MINI！55年依旧传承的经典元素。',
+        );
+        $title = $arr[array_rand($arr)];
+        $this -> assign('title', $title);
         $this -> display();
     }
 
     public function show(){
 //        $result = R('Car/getcar', array(), 'Widget');
 //        $this -> assign('result', $result);
+        $arr = array(
+            '#MINI 55周年#机密档案曝光，前世今生被国内外专家联合调查',
+            '才知道1975年前的Mini没有两侧后视镜！那怎么倒的车？！',
+            'Mary Quant设计的迷你裙灵感来源于Mini，这事儿你知道么？',
+            'Happy Birthday to MINI！55年依旧传承的经典元素。',
+        );
+        $title = $arr[array_rand($arr)];
+        $this -> assign('title', $title);
         $this -> display();
     }
 
